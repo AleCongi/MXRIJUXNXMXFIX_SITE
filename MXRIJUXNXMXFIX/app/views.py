@@ -4,10 +4,14 @@ from django.db.models import F
 from .forms import *
 from .models import *
 
+# create a homepage view calling the template homepage.html
+
 
 def homepage(request):
     return render(request, 'homepage.html')
 
+
+'''
 
 # GENERE
 
@@ -81,9 +85,6 @@ def song_list_by_genre(request, genre_id):
 def song_detail(request, song_id):
     song = get_object_or_404(Song, id=song_id)
     return render(request, 'song_detail.html', {'song': song})
-
-
-'''
 
 
 
@@ -220,4 +221,5 @@ def support(request):
     return render(request, 'support.html')
 
 def profilo(request):
-    return render(request, 'profilo.html')'''
+    return render(request, 'profilo.html')
+'''
