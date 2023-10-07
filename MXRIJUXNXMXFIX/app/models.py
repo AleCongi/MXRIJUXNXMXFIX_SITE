@@ -34,7 +34,7 @@ class Album(models.Model):
     id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=200)
     description = models.CharField(max_length=200)
-    artist = models.ManyToManyField(Artist, on_delete=models.CASCADE)
+    artist = models.ManyToManyField(Artist)
     release_date = models.DateField()
 
     def __str__(self):
@@ -45,9 +45,9 @@ class Song(models.Model):
     id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=200)
     description = models.CharField(max_length=200)
-    artist = models.ManyToManyField(Artist, on_delete=models.CASCADE)
+    artist = models.ManyToManyField(Artist)
     album = models.ForeignKey(Album, on_delete=models.CASCADE)
-    genre = models.ManyToManyField(Genre, on_delete=models.CASCADE)
+    genre = models.ManyToManyField(Genre)
 
     def __str__(self):
         return self.name
@@ -66,7 +66,7 @@ class Song_reference(models.Model):
 class Crew(models.Model):
     id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=200)
-    artist = models.ManyToManyField(Artist, on_delete=models.CASCADE)
+    artist = models.ManyToManyField(Artist)
 
     def __str__(self):
         return self.name
@@ -75,7 +75,7 @@ class Crew(models.Model):
 class Playlist(models.Model):
     id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=200)
-    song = models.ManyToManyField(Song, on_delete=models.CASCADE)
+    album = models.ManyToManyField(Album)
 
     def __str__(self):
         return self.name
@@ -85,8 +85,7 @@ class Event(models.Model):
     id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=200)
     description = models.CharField(max_length=200)
-    artist = models.ManyToManyField(Artist, on_delete=models.CASCADE)
-    date = models.DateField()
+    artist = models.ManyToManyField(Artist)
 
     def __str__(self):
         return self.name
