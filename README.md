@@ -1,36 +1,36 @@
  
-### Istruzioni:
-1. Installare un ambiente virtuale dentro la cartella del progetto
+### Instruction:
+
+1. Install your venv
 ```
     python -m venv venv
 ```
-2. Attivare l'ambiente virtuale (controllare di essere nella cartella giusta)
-```
-    cd .\MangaDB\
-```
+
+2. Activate your venv
 ```
     venv\Scripts\activate
 ```
 
-3. Avviare il server
+3. Install dependencies
+```
+    pip install -r requirements.txt
+```
+
+4. Run the server
 ``` 
     python manage.py runserver
 ```
 
 EXTRA: 
-! Ricordarsi di effettuare le migrazioni (nel caso di aggiornamenti al db)
-(senza --merge la prima volta)
+Every time you modify models, you need to migrate them 
 ```
-    ./manage.py makemigrations --merge 
+    python manage.py makemigrations --merge
     python manage.py migrate
 ```
 
-! Ricordarsi di installare le librerie e dipendenze necessarie !
+
+
+You can access to the application in the same network with the ip of your pc and the port    
 ```
-    pip install -r requirements.txt
-```
-Avviare il server per la visione da altri dispositivi connessi alla stessa rete
-    Inserire il proprio IP in ALLOWED_HOSTS nel file settings.py (MangaDB\MangaDB\settings.py)    
-```
-    python manage.py TUOIP:8000 runserver
+    python manage.py YOURIP:8000 runserver
 ```
