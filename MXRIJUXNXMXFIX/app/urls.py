@@ -1,5 +1,14 @@
 from django.urls import path
-from . import views, admin
+from django.contrib import admin
+
+from . import views
+
+import logging
+
+
+logger = logging.getLogger("aled")
+
+logger.info(admin)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
