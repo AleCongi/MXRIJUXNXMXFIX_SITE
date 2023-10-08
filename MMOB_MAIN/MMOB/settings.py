@@ -22,7 +22,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = "django-insecure-(&ml9nh!k+7z1%4q+sjy7cr=pzek*h-5ouuej(7hh(1yyeyujm"
 
-# Allow debug for development env only 
+# Allow debug for development env only
 DEBUG = True
 
 ALLOWED_HOSTS = ['localhost', '127.0.0.1']
@@ -50,7 +50,7 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
 
-ROOT_URLCONF = "MXRIJUXNXMXFIX.urls"
+ROOT_URLCONF = "MMOB.urls"
 
 TEMPLATES = [
     {
@@ -70,7 +70,7 @@ TEMPLATES = [
 ]
 
 
-WSGI_APPLICATION = "MXRIJUXNXMXFIX.wsgi.application"
+WSGI_APPLICATION = "MMOB.wsgi.application"
 
 
 # Database
@@ -124,7 +124,6 @@ STATIC_URL = "static/"
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
-
 
 
 # LOGGIN SYSTEM
